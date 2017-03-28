@@ -1,0 +1,658 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #c4c4c4;
+}
+
+
+/*控制面板*/
+
+.control-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 262px;
+    background-color: #333;
+    padding: 10px;
+    color: #b0b0b0;
+    font-size: 1.3rem;
+    z-index: 9998;
+}
+
+.control-panel .close-cp {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.control-panel hr {
+    border-color: #505050;
+}
+
+.control-panel .cp-1 input[type=range] {
+    -webkit-appearance: none;
+    width: 170px;
+    border-radius: 10px;
+    margin: 0 10px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+.control-panel .cp-1 input[type=range]:focus {
+    outline: none;
+}
+
+.control-panel .cp-1 input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: #eee;
+    margin-top: -7px;
+}
+
+.control-panel .cp-1 input[type=range]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 10px;
+    background-color: #b0b0b0;
+}
+
+.control-panel .cp-1 {
+    position: relative;
+}
+
+.control-panel .cp-1 .close-main {
+    margin-top: 10px;
+}
+
+.control-panel .updown {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+}
+
+.control-panel p {
+    margin: 0;
+}
+
+.control-panel .cp-2 .tree {
+    margin-left: 5px;
+    width: 40px;
+    height: 20px;
+    border-left: 1px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+.control-panel .cp-2 .tree a {
+    position: relative;
+    left: 40px;
+    top: 10px;
+    white-space: nowrap;
+    color: white;
+    line-height: 10px;
+}
+
+.control-panel .cp-3 {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    padding-top: 30px;
+    border-top: 1px solid #505050;
+    text-align: center;
+}
+
+
+/*控制菜单*/
+
+.control {
+    position: fixed;
+    top: 50px;
+    left: 800px;
+    white-space: nowrap;
+    z-index: 9999;
+}
+
+.control .c-1 {
+    height: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.control .hide-control {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 15px;
+    padding-top: 2px;
+}
+
+.control .hide-control img {
+    display: block;
+}
+
+.control .c-2 {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+
+.control .c-2 a {
+    position: relative;
+    padding: 2px;
+    height: 30px;
+    margin: 0 1px;
+}
+
+.control .tip {
+    position: absolute;
+    top: 130%;
+    left: -2px;
+    display: none;
+    background: orange;
+    border: 1px solid black;
+    font-size: 11px;
+    padding: 2px 4px;
+    ;
+}
+
+.control .c-2 a:hover .tip {
+    display: block;
+    color: black;
+}
+
+.control a:hover img {
+    background: gray;
+    opacity: 0.8;
+}
+
+.control .c-2 a img {
+    width: 24px;
+}
+
+.control .hide-menu {
+    display: inline-block;
+    border-left: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+
+/*网页内容*/
+
+
+/*    header*/
+
+.content {
+    width: 1000px;
+    background-color: #f9fafb;
+    margin-left: 262px;
+    margin-right: auto;
+    transition: 0.3s all;
+    transform: scale(1.1);
+    transform-origin: left top;
+    font-family: "微软雅黑";
+}
+
+.row {
+    margin: 0;
+}
+
+nav {
+    line-height: 40px;
+}
+
+nav ul {
+    margin-bottom: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav img {
+    width: 60%;
+    height: 36px;
+}
+
+nav .shu {
+    font-size: 20px;
+    display: inline-block;
+    transform: rotate(35deg);
+}
+
+nav .denglu {
+    float: right;
+    text-align: right;
+}
+
+.banner {
+    position: relative;
+    height: auto;
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.banner-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.banner .input-par {
+    display: inline-block;
+    position: relative;
+    height: 15%;
+    width: 33%;
+    margin-top: 15px;
+}
+
+.banner-menu input {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+.banner-menu input:focus {
+    outline: none;
+}
+
+.banner-menu .find {
+    position: absolute;
+    top: 10%;
+    right: 3px;
+    height: 80%;
+    width: auto;
+}
+
+.banner-menu .find img {
+    height: 100%;
+}
+
+
+/*    内容*/
+
+.main {
+    color: #a6a6bf;
+}
+
+.main-1 {
+    text-align: center;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.main-1>div {
+    margin-bottom: 10px;
+    padding: 0 9px;
+}
+
+.main-1 .box {
+    padding: 10px 7px;
+    background-color: #fff;
+}
+
+.main-2 {
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.main-2 .knowmore {
+    display: block;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.main-2 .img-control {
+    display: inline-block;
+    margin: 0 10px 20px;
+}
+
+.main-2 h2,
+.main-2 .img-control:hover,
+.main-2 .active {
+    color: black;
+}
+
+.main-2 .checkmore {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid #a6a6bf;
+    margin: 20px 0;
+}
+
+.main-2 .checkmore:hover {
+    text-decoration: none;
+}
+.main-3{
+    background: url(../images/main3.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 20px;
+    color: white;
+    
+    
+}
+.main-3 h3{
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    
+}
+.main-3 h3 .inner-text{
+    border-bottom: 2px solid white;
+    padding: 4px 60px;
+    display: inline-block;
+}
+.main-3 h3 .caret{
+    position: absolute;
+    left: 49.5%;
+    top: 100%;
+}
+.main-3 .contain{
+    padding: 20px;
+    overflow: hidden;
+}
+.main-3 .contain p,.main-3 .contain div{
+    float: left;
+    width: 50%;
+    height: 100px;
+    position: relative;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+.main-3 .data{
+    
+    font-size: 85%;
+    opacity: 0.7;
+    display: block;
+}
+.main-3 p:nth-child(3) .data{
+    text-align: right;
+}
+.main-3 .circle{
+    position: absolute;
+    color: white;
+    font-size: 150%;
+    top:-13px;
+    left: -6.5px;
+    
+}
+.main-3 p:nth-child(3) .circle{
+    right: -6.5px;
+    left: auto;
+}
+.main-3 .border{
+    border-left: 2px solid white;
+}
+.main-3 .checkmore{
+    display: block;
+    height: 40px;
+    width: 100px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid white;
+    margin: 0 auto;
+}
+.main-4{
+    padding: 50px 7px;
+    text-align: center;
+}
+.main-4 h3{
+    padding:30px 0;
+}
+.main-4 img{
+    display: block;
+    width: 100%;
+    transform: scaleY(0.7);
+}
+.main-4 h3{
+    color: black;
+    white-space: nowrap;
+    margin-top: 0;
+    padding-top: 10px;
+}
+.main-4 .border-b{
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 2px solid red;
+}
+.main-4 .col-md-4{
+    margin-bottom: 20px;
+}
+.main-4 .checkmore{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #a6a6bf;
+    clear: both;
+    margin: 0 auto;
+    color: black;
+}
+/*  footer*/
+footer{
+    color: #fff;
+    
+}
+.footer-top{
+    padding: 30px 30px;
+    background-color: #646975;
+}
+.footer-top h3{
+   
+    text-align: center;
+}
+.footer-top .col-md-3{
+    position: relative;
+}
+.footer-top img{
+    width: 100%;
+}
+.footer-top .hover-box{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    line-height: 5;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: none;
+}
+
+.footer-top .col-md-3:hover .hover-box{
+    display: block;
+}
+.footer-top .img-control{
+    margin-top: 30px;
+    text-align: center;
+    clear: both;
+}
+.footer-top .img-control a{
+    margin: 0 5px;
+    color: #a6a6bf;
+}
+.footer-top .img-control a:hover{
+    color: white;
+}
+.footer-bottom{
+    background: #4e5567;
+    padding: 40px;
+}
+.footer-b-1{
+    line-height: 40px;
+    
+}
+.footer-b-1 li{
+    float: left;
+}
+.footer-b-1 img{
+    height: 40px;
+    
+}
+.footer-b-2 .shu{
+    padding: 0 3px;
+}
+.footer-b-2 h3{
+    margin-top: 40px;
+    line-height: 40px;
+}
+.footer-b-2  a{
+    color: #ced0d5;
+}
+.footer-bottom hr{
+    border-color: #5f6471;
+}
+.footer-bottom .adress{
+    text-align: center;
+    line-height: 50px;
+    color: #ced0d5;
+    white-space: nowrap;
+    font-size: 85%;
+}
+/*媒体查询*/
+
+@media screen and (min-width:992px) {
+    .content {
+        width: 900px;
+    }
+    nav .col-xs-push-4{
+        left: 0;
+    }
+    nav .col-xs-pull-1{
+        right: 0;
+    }
+    nav li:not(:last-child) {
+        margin-right: 8%;
+    }
+    .main-2 .col-md-3 {
+        width: 20%;
+        padding: 1px;
+    }
+    .footer-b-1 li:not(:last-child) {
+        margin-right: 6%;
+    }
+    .footer-b-1 img{
+        left: 0;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    .content {
+        width: 640px;
+        font-size: 12px;
+    }
+    h4{
+        font-size: 16px
+    }
+    nav li:not(:last-child) {
+        margin-right: 13%;
+    }
+    h1{
+        font-size: 32px;
+    }
+     h3{
+        font-size: 22px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    .banner .input-par {
+        position: absolute;
+        top: 87%;
+        left: 10%;
+        width: 80%;
+        height: 16%;
+    }
+    .main {
+        padding-top: 25px;
+    }
+    .main-1 .col-xs-6 {
+        margin-left: 25%;
+    }
+    .main-2 .col-sm-4 {
+        padding: 10px 35px;
+    }
+    .main-4 .col-sm-5{
+        margin-left: 6%;
+        margin-bottom: 6%;
+    }
+    .footer-b-1 li:not(:last-child){
+        margin-right: 11%;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    .content {
+        width: 450px;
+        font-size: 10px;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 28px;
+    }
+    h2{
+        font-size: 26px
+    }
+    h4{
+        font-size: 14px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    nav li:not(:last-child) {
+        margin-right: 10%;
+    }
+    .banner .input-par {
+        position: absolute;
+        top: 87%;
+        left: 10%;
+        width: 80%;
+        height: 16%;
+    }
+    
+    .main {
+        padding-top: 20px;
+    }
+    .main-1 .col-xs-6 {
+        margin-left: 25%;
+    }
+    .main-2 .col-xs-6 {
+        padding: 10px 40px
+    }
+    .main-4 .col-xs-6{
+        margin-left: 25%;
+        margin-bottom: 
+    }
+    .footer-b-1 li:not(:last-child) {
+        margin-right: 8%;
+    }
+}
